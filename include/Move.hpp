@@ -1,14 +1,12 @@
 #pragma once
 #include <string>
+#include <utility>
 
 class Move
 {
 public:
-    Move(const std::string _sign, const int _value) : sign(_sign), value(_value) {}    std::string getSign() override { return sign; }
-    std::string getSign() { return sign; }
-    int getValue() { return value; }
-
+    Move(const int field, const std::string sign) : move(std::make_pair(field, sign)) {}
+    int getField() { return move.first; }
 private:
-    std::string sign;
-    int value;
+    std::pair<int, std::string> move;
 };
