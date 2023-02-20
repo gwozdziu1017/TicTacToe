@@ -3,8 +3,8 @@
 #include <map>
 #include <string>
 #include <memory>
-#include "IBoard.hpp"
 #include "Move.hpp"
+#include "IO.hpp"
 
 typedef std::map<int, std::string> BoardContent;
 typedef std::shared_ptr<BoardContent> BoardPtr;
