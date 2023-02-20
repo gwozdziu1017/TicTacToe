@@ -1,3 +1,4 @@
+#pragma once
 #include "IPlayer.hpp"
 #include <map>
 #include <set>
@@ -15,6 +16,8 @@ typedef std::vector<PlayerPtr> PlayerPtrVector;
 
 class IGame
 {
+public:
+    virtual ~IGame() {}
 protected:
     virtual void run() = 0;
     virtual void onTurnEnd(PlayerPtr player) = 0;

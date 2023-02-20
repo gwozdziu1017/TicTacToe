@@ -1,6 +1,7 @@
 /*
     Storage for different menu contexts.
 */
+#pragma once
 #include <string>
 
 using std::string;

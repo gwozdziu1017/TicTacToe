@@ -3,7 +3,7 @@
     Methods print and get use std::cin and std::cout.
     Moreover method print is overloaded and is able to print different container as well
 */
-
+#pragma once
 #include <iostream>
 
 class IO

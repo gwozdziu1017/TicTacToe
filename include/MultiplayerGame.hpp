@@ -10,7 +10,7 @@ class MultiplayerGame : public IGame
 {
 public:
     MultiplayerGame(PlayerPtr player1, PlayerPtr player2);
-    // todo virtual DTOR
+    ~MultiplayerGame() {}
 
 private:
     void run() override;
