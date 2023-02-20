@@ -19,8 +19,6 @@ public:
     ~NumericBoard() {};
 
 private:
-    void setBoardPtr();
-
     friend std::ostream& operator<< (std::ostream& stream, const NumericBoard& board);
-    BoardPtr boardPtr;
+    std::string board;
 };
