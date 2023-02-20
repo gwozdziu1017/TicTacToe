@@ -1,13 +1,12 @@
 #pragma once
-#include "IMove.hpp"
+#include <string>
 
-class Move : public IMove
+class Move
 {
 public:
-    Move(const std::string _sign, const int _value) : sign(_sign), value(_value) {}
-    ~Move() {}
-    std::string getSign() override { return sign; }
-    int getValue() override { return value; }
+    Move(const std::string _sign, const int _value) : sign(_sign), value(_value) {}    std::string getSign() override { return sign; }
+    std::string getSign() { return sign; }
+    int getValue() { return value; }
 
 private:
     std::string sign;
