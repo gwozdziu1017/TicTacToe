@@ -16,6 +16,13 @@ bool PlayableBoard::isFieldFree(const int field)
     return true;
 }
 
+void PlayableBoard::sortMoveVector()
+{
+    std::sort(moveVector.begin(),
+              moveVector.end(),
+              [](auto& lhs, auto& rhs){ return lhs.getField() < rhs.getField(); });
+}
+
 std::ostream &operator<<(std::ostream &stream, const PlayableBoard &board)
 {
     

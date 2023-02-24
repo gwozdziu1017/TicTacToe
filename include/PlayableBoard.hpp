@@ -9,6 +9,8 @@ public:
 
     void updateBoardWithMove(const Move move);
     bool isFieldFree(const int field);
+    void sortMoveVector();
+    MoveVector getMoveVector() { return moveVector; }
 
     friend std::ostream& operator<< (std::ostream& stream, const PlayableBoard& board);
 private:

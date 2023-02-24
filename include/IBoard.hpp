@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <algorithm>
 #include "Move.hpp"
 #include "IO.hpp"
 
