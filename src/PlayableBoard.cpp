@@ -1,18 +1,17 @@
 #include "../include/PlayableBoard.hpp"
+#include "PlayableBoard.hpp"
 
 void PlayableBoard::updateBoardWithMove(const Move move)
 {
-    moveVectorPtr->push_back(move);
+    moveVector.push_back(move);
 }
 
 bool PlayableBoard::isFieldFree(const int field)
 {
-    for(auto iter = moveVectorPtr->begin();
-             iter != moveVectorPtr->end();
-             iter++)
+    for(auto move : moveVector)
     {
-        if(iter->getField() == field) // there is move with this field as a key
-            return false;
+        if(move.getField() == field)
+            return false;   // there is field in moveVector so it's not free
     }
     return true;
 }

@@ -4,7 +4,7 @@
 class PlayableBoard : public IBoard
 {
 public:
-    PlayableBoard() : moveVectorPtr(std::make_shared<MoveVector>()) {}
+    PlayableBoard() : moveVector(MoveVector()) {}
     ~PlayableBoard() {}
 
     void updateBoardWithMove(const Move move);
@@ -12,5 +12,5 @@ public:
 
     friend std::ostream& operator<< (std::ostream& stream, const PlayableBoard& board);
 private:
-    MoveVectorPtr moveVectorPtr;
+    MoveVector moveVector;
 };
