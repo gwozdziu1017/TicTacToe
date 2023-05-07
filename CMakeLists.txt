@@ -22,7 +22,9 @@ add_executable(TicTacToe src/main.cpp)
 target_link_libraries(TicTacToe includes)
 target_compile_features(TicTacToe PUBLIC cxx_std_20)
 
-add_executable(testing src/tests/ExampleTest.cpp)
+add_executable(testing src/tests/ExampleTest.cpp
+                        src/tests/BoardTesting.cpp
+                        src/tests/MoveTesting.cpp)
 target_link_libraries(testing
     gtest
     gmock
