@@ -5,6 +5,7 @@
 #include <algorithm>
 #include "Move.hpp"
 #include "IO.hpp"
+#include "Menu.hpp"
 
 typedef std::vector<Move> MoveVector;
 typedef std::shared_ptr<MoveVector> MoveVectorPtr;

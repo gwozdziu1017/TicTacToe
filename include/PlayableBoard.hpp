@@ -4,15 +4,30 @@
 class PlayableBoard : public IBoard
 {
 public:
-    PlayableBoard() : moveVector(MoveVector()) {}
+    PlayableBoard() { setMoveVectorAsEmpty(); }
     ~PlayableBoard() {}
 
-    void updateBoardWithMove(const Move move);
-    bool isFieldFree(const int field);
+    void updateBoardWithMove(Move move);
+    bool isFieldFree(int field);
     void sortMoveVector();
+    void print();
     MoveVector getMoveVector() { return moveVector; }
+    void setMoveVectorAsEmpty();
 
-    friend std::ostream& operator<< (std::ostream& stream, const PlayableBoard& board);
+    friend std::ostream& operator<< (std::ostream& stream, const PlayableBoard& board){
+        MoveVector vectorOfMoves = board.moveVector;
+        if(vectorOfMoves.size() == 0)
+        {
+            stream << "EMPTY_BOARD";
+            return stream;
+        }
+        
+        for(auto elem : vectorOfMoves)
+        {
+            stream << elem;
+        }
+        return stream;
+    };
 private:
     MoveVector moveVector;
 };

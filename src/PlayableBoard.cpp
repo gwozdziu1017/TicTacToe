@@ -1,19 +1,20 @@
 #include "../include/PlayableBoard.hpp"
 #include "PlayableBoard.hpp"
 
-void PlayableBoard::updateBoardWithMove(const Move move)
+void PlayableBoard::updateBoardWithMove(Move _move)
 {
-    moveVector.push_back(move);
+    Move tempMove{_move.getField(), emptyField};
+    std::replace(moveVector.begin(), moveVector.end(), Move{_move.getField(), emptyField}, _move);
+    //moveVector.at(_move.getField()) = _move;
 }
 
-bool PlayableBoard::isFieldFree(const int field)
+bool PlayableBoard::isFieldFree(int field)
 {
-    for(auto move : moveVector)
-    {
-        if(move.getField() == field)
-            return false;   // there is field in moveVector so it's not free
-    }
-    return true;
+    Move temp{field, Menu::EMPTY_FIELD};
+    auto result = std::find(begin(moveVector),
+                            end(moveVector), 
+                            temp);
+    return result != std::end(moveVector);
 }
 
 void PlayableBoard::sortMoveVector()
@@ -23,7 +24,16 @@ void PlayableBoard::sortMoveVector()
               [](auto& lhs, auto& rhs){ return lhs.getField() < rhs.getField(); });
 }
 
-std::ostream &operator<<(std::ostream &stream, const PlayableBoard &board)
+void PlayableBoard::print()
 {
-    
+    std::cerr << this;
+}
+
+void PlayableBoard::setMoveVectorAsEmpty()
+{
+    for(auto iter = 1; iter<10; iter++)
+    {
+        Move mv{iter, emptyField};
+        this->moveVector.push_back(mv);
+    }
 }
