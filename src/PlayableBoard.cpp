@@ -19,7 +19,7 @@ bool PlayableBoard::isFieldFree(int field)
 
 void PlayableBoard::print()
 {
-    std::cerr << *this;
+    IO::print(*this);
 }
 
 void PlayableBoard::setMoveVectorAsEmpty()
