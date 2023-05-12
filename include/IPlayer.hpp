@@ -11,5 +11,5 @@ public:
 protected:
     virtual std::string getName() = 0;
     virtual std::string getSign() = 0;
-    virtual bool isWinner() = 0;
+    virtual bool getIsWinner() = 0;
 };
