@@ -15,8 +15,10 @@
 class NumericBoard : public IBoard
 {
 public:
-    NumericBoard();
+    NumericBoard() { setBoardAsDefault(); };
     ~NumericBoard() {};
+
+    void setBoardAsDefault();
 
 private:
     friend std::ostream& operator<< (std::ostream& stream, const NumericBoard& board);

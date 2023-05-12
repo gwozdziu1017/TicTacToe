@@ -1,6 +1,6 @@
 #include "../include/NumericBoard.hpp"
 
-NumericBoard::NumericBoard()
+void NumericBoard::setBoardAsDefault()
 {
     board = "";
 
@@ -29,7 +29,6 @@ NumericBoard::NumericBoard()
     board.append(" 9 ");
     board.append("\n");
 }
-
 std::ostream &operator<<(std::ostream &stream, const NumericBoard &board)
 {
     IO::print(board);
