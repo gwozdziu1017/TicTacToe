@@ -9,7 +9,6 @@ public:
 
     void updateBoardWithMove(Move move);
     bool isFieldFree(int field);
-    void sortMoveVector();
     void print();
     MoveVector getMoveVector() { return moveVector; }
     void setMoveVectorAsEmpty();

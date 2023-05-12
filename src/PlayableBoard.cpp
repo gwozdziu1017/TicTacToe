@@ -17,16 +17,9 @@ bool PlayableBoard::isFieldFree(int field)
     return result != std::end(moveVector);
 }
 
-void PlayableBoard::sortMoveVector()
-{
-    std::sort(moveVector.begin(),
-              moveVector.end(),
-              [](auto& lhs, auto& rhs){ return lhs.getField() < rhs.getField(); });
-}
-
 void PlayableBoard::print()
 {
-    std::cerr << this;
+    std::cerr << *this;
 }
 
 void PlayableBoard::setMoveVectorAsEmpty()

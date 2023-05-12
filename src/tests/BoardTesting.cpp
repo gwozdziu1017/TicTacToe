@@ -39,7 +39,6 @@ namespace BoardTesting
         Move mv{1, "X"};
         board->updateBoardWithMove(mv);
 
-        std::cerr << *board;
         EXPECT_FALSE(board->isFieldFree(1));
     }
 
@@ -49,7 +48,7 @@ namespace BoardTesting
         ASSERT_FALSE(board->isFieldFree(1));
     }
 
-/*
+
     TEST(playableBoardMock, createBoardPutThreeMovesPrintBoard)
     {
         std::shared_ptr<PlayableBoard> board = std::make_shared<PlayableBoard>();
@@ -60,7 +59,7 @@ namespace BoardTesting
         board->updateBoardWithMove(m1);
         board->updateBoardWithMove(m2);
         board->updateBoardWithMove(m3);
-        //std::cerr << *board;
+
+        board->print();
     }
-*/
 }
