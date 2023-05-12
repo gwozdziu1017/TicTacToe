@@ -9,7 +9,7 @@
 
 namespace BoardTesting
 {
-    TEST(PlayableBoard, createPlayableBoardGetMoveVectorReturnsEmptyMoveVector)
+    TEST(PlayableBoardTests, createPlayableBoardGetMoveVectorReturnsEmptyMoveVector)
     {
         std::shared_ptr<PlayableBoard> board = std::make_shared<PlayableBoard>();
         MoveVector moveVector = board->getMoveVector();
@@ -22,7 +22,7 @@ namespace BoardTesting
         }
     }
 
-    TEST(playableBoardMock, createBoardUpdateBoardWithMove)
+    TEST(PlayableBoardTests, createBoardUpdateBoardWithMove)
     {
         std::shared_ptr<PlayableBoard> board = std::make_shared<PlayableBoard>();
         Move mv{1, Menu::VALUE_X};
@@ -33,7 +33,7 @@ namespace BoardTesting
         ASSERT_TRUE(moveVector[0] == mv);
     }
 
-    TEST(playableBoardMock, putMoveIntoBoardOnIsFieldFreeExpectFalse)
+    TEST(PlayableBoardTests, putMoveIntoBoardOnIsFieldFreeExpectFalse)
     {
         std::shared_ptr<PlayableBoard> board = std::make_shared<PlayableBoard>();
         Move mv{1, "X"};
@@ -42,14 +42,14 @@ namespace BoardTesting
         EXPECT_FALSE(board->isFieldFree(1));
     }
 
-    TEST(playableBoardMock, createBoardOnIsFieldFreeExpectFalse)
+    TEST(PlayableBoardTests, createBoardOnIsFieldFreeExpectFalse)
     {
         std::shared_ptr<PlayableBoard> board = std::make_shared<PlayableBoard>();
         ASSERT_FALSE(board->isFieldFree(1));
     }
 
 
-    TEST(playableBoardMock, createBoardPutThreeMovesPrintBoard)
+    TEST(PlayableBoardTests, createBoardPutThreeMovesPrintBoard)
     {
         std::shared_ptr<PlayableBoard> board = std::make_shared<PlayableBoard>();
         Move m1{1, "X"};

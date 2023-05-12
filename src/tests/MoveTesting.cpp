@@ -9,19 +9,19 @@
 
 namespace MoveTesting
 {
-    TEST(MoveTesting, createMoveGetFieldReturnsField)
+    TEST(MoveTests, createMoveGetFieldReturnsField)
     {
         std::shared_ptr<Move> mv = std::make_shared<Move>(1, Menu::VALUE_X);
         EXPECT_EQ(mv->getField(), 1);
     }
 
-    TEST(MoveTesting, createMoveGetValueReturnsValue)
+    TEST(MoveTests, createMoveGetValueReturnsValue)
     {
         std::shared_ptr<Move> mv = std::make_shared<Move>(1, Menu::VALUE_X);
         EXPECT_EQ(mv->getValue(), Menu::VALUE_X);
     }
 
-    TEST(MoveMock, onEqualMoveFieldsOperatorEqualsReturnsFalse)
+    TEST(MoveTests, onEqualMoveFieldsOperatorEqualsReturnsFalse)
     {
         Move m1{1, Menu::VALUE_X};
         Move m2{1, Menu::VALUE_o};
@@ -29,7 +29,7 @@ namespace MoveTesting
         EXPECT_FALSE(m1 == m2);
     }
 
-   TEST(MoveMock, onEqualMoveValuesOperatorEqualsReturnsFalse)
+   TEST(MoveTests, onEqualMoveValuesOperatorEqualsReturnsFalse)
     {
         Move m1{1, Menu::VALUE_X};
         Move m2{2, Menu::VALUE_X};
@@ -37,7 +37,7 @@ namespace MoveTesting
         EXPECT_FALSE(m1 == m2);
     }
 
-   TEST(MoveMock, onEqualMoveFieldAndValueOperatorEqualsReturnsTrue)
+   TEST(MoveTests, onEqualMoveFieldAndValueOperatorEqualsReturnsTrue)
     {
         Move m1{1, Menu::VALUE_X};
         Move m2{1, Menu::VALUE_X};
