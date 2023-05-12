@@ -11,14 +11,14 @@ namespace MoveTesting
 {
     TEST(MoveTesting, createMoveGetFieldReturnsField)
     {
-        std::shared_ptr<Move> mv = std::make_shared<Move>(1, "X");
+        std::shared_ptr<Move> mv = std::make_shared<Move>(1, Menu::VALUE_X);
         EXPECT_EQ(mv->getField(), 1);
     }
 
     TEST(MoveTesting, createMoveGetValueReturnsValue)
     {
-        std::shared_ptr<Move> mv = std::make_shared<Move>(1, "X");
-        EXPECT_EQ(mv->getValue(), "X");
+        std::shared_ptr<Move> mv = std::make_shared<Move>(1, Menu::VALUE_X);
+        EXPECT_EQ(mv->getValue(), Menu::VALUE_X);
     }
 
     TEST(MoveMock, onEqualMoveFieldsOperatorEqualsReturnsFalse)
