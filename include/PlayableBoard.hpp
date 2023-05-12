@@ -7,12 +7,18 @@ public:
     PlayableBoard() { setMoveVectorAsEmpty(); }
     ~PlayableBoard() {}
 
+    // setters
+    bool tryUpdateBoardWithMove(Move move);
     void updateBoardWithMove(Move move);
+    void setMoveVectorAsEmpty();
+
+    // getters
     bool isFieldFree(int field);
     void print();
     MoveVector getMoveVector() { return moveVector; }
-    void setMoveVectorAsEmpty();
+    bool isWinningCombinationInMoveVector();
 
+    // operators
     friend std::ostream& operator<< (std::ostream& stream, const PlayableBoard& board){
         MoveVector vectorOfMoves = board.moveVector;
         if(vectorOfMoves.size() == 0)

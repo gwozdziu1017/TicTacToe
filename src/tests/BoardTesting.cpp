@@ -16,8 +16,8 @@ namespace BoardTesting
         int iter = 1;
         for(auto elem : moveVector)
         {
-            Move mv{iter, emptyField};
-            ASSERT_TRUE(elem == Move(iter, emptyField));
+            Move mv{iter, Menu::EMPTY_FIELD};
+            ASSERT_TRUE(elem == Move(iter, Menu::EMPTY_FIELD));
             iter++;
         }
     }
@@ -42,12 +42,30 @@ namespace BoardTesting
         EXPECT_FALSE(board->isFieldFree(1));
     }
 
-    TEST(PlayableBoardTests, createBoardOnIsFieldFreeExpectFalse)
+    TEST(PlayableBoardTests, createBoardOnIsFieldFreeExpectTrue)
     {
         std::shared_ptr<PlayableBoard> board = std::make_shared<PlayableBoard>();
-        ASSERT_FALSE(board->isFieldFree(1));
+        EXPECT_TRUE(board->isFieldFree(1));
     }
 
+    TEST(PlayableBoardTests, onUpdateFreeFieldExpectTryUpdateFieldReturnsTrue)
+    {
+        std::shared_ptr<PlayableBoard> board = std::make_shared<PlayableBoard>();
+        Move m1{5, Menu::VALUE_o};
+
+        EXPECT_TRUE(board->tryUpdateBoardWithMove(m1));
+
+    }
+
+    TEST(PlayableBoardTests, onUpdateNotFreeFieldExpectTryUpdateFieldReturnsFalse)
+    {
+        std::shared_ptr<PlayableBoard> board = std::make_shared<PlayableBoard>();
+        Move m1{5, Menu::VALUE_o};
+        Move m2{5, Menu::VALUE_X};
+
+        board->updateBoardWithMove(m1);
+        EXPECT_FALSE(board->tryUpdateBoardWithMove(m2));
+    }
 
     TEST(PlayableBoardTests, createBoardPutThreeMovesPrintBoard)
     {
@@ -61,5 +79,10 @@ namespace BoardTesting
         board->updateBoardWithMove(m3);
 
         board->print();
+    }
+
+    TEST(PlaybleBoardTests, createBoardPutWinningMovesExpectIsWinningComboReturnsTrue)
+    {
+
     }
 }

@@ -14,7 +14,7 @@ public:
 
 private:
     void run() override;
-    void onTurnEnd(PlayerPtr player) override;
+    void onTurnEnd(PlayerPtr playerPtr) override;
     void updateBoard(Move move);
 
     MoveMap moveMap;

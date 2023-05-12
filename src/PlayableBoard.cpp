@@ -1,11 +1,22 @@
 #include "../include/PlayableBoard.hpp"
 #include "PlayableBoard.hpp"
 
+bool PlayableBoard::tryUpdateBoardWithMove(Move _move)
+{
+    if(isFieldFree(_move.getField()))
+    {
+        updateBoardWithMove(_move);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 void PlayableBoard::updateBoardWithMove(Move _move)
 {
-    Move tempMove{_move.getField(), emptyField};
-    std::replace(moveVector.begin(), moveVector.end(), Move{_move.getField(), emptyField}, _move);
-    //moveVector.at(_move.getField()) = _move;
+    Move tempMove{_move.getField(), Menu::EMPTY_FIELD};
+    std::replace(moveVector.begin(), moveVector.end(), Move{_move.getField(), Menu::EMPTY_FIELD}, _move);
 }
 
 bool PlayableBoard::isFieldFree(int field)
@@ -26,7 +37,7 @@ void PlayableBoard::setMoveVectorAsEmpty()
 {
     for(auto iter = 1; iter<10; iter++)
     {
-        Move mv{iter, emptyField};
+        Move mv{iter, Menu::EMPTY_FIELD};
         this->moveVector.push_back(mv);
     }
 }
