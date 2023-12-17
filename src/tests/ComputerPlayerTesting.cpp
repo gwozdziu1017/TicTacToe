@@ -15,6 +15,7 @@ namespace ComputerPlayerTests
         ASSERT_TRUE(CPlayer->getName() == "Computer");
         ASSERT_TRUE(CPlayer->getSign() == Menu::VALUE_o);
         EXPECT_FALSE(CPlayer->getIsWinner());
+        ASSERT_TRUE(CPlayer->getId() == 0);
     }
 
     TEST(ComputerPlayerTests, createComputerPlayerThenSetIsWinnerTrueExpectGetIsWinnerTrue)
@@ -23,5 +24,13 @@ namespace ComputerPlayerTests
         CPlayer -> setIsWinner(true);
 
         EXPECT_TRUE(CPlayer->getIsWinner());
+    }
+
+    TEST(ComputerPlayerTests, createComputerPlayerThenSetIdTo1ExpectIdEquals1)
+    {
+        std::shared_ptr<ComputerPlayer> CPlayer = std::make_shared<ComputerPlayer>();
+        CPlayer -> setId(1);
+
+        EXPECT_TRUE(CPlayer->getId() == 1);
     }
 }

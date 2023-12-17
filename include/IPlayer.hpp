@@ -13,4 +13,5 @@ protected:
     virtual std::string getName() = 0;
     virtual std::string getSign() = 0;
     virtual bool getIsWinner() = 0;
+    virtual short getId() = 0;
 };
