@@ -11,7 +11,7 @@ public:
     ~HumanPlayer() {}
     std::string getName() override { return name; };
     std::string getSign() override { return sign; };
-    bool isWinner() override { return winner; };
+    bool getIsWinner() override { return winner; };
 private:
     std::string name;
     std::string sign;
