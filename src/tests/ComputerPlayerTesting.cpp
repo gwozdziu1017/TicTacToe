@@ -10,22 +10,16 @@ namespace ComputerPlayerTests
 {
     TEST(ComputerPlayerTests, createComputerPlayerThenVerifyAllFields)
     {
-        std::shared_ptr<ComputerPlayer> CPlayer = std::make_shared<ComputerPlayer>(
-            "Damian",
-            Menu::VALUE_o
-        );
+        std::shared_ptr<ComputerPlayer> CPlayer = std::make_shared<ComputerPlayer>();
 
-        ASSERT_TRUE(CPlayer->getName() == "Damian");
+        ASSERT_TRUE(CPlayer->getName() == "Computer");
         ASSERT_TRUE(CPlayer->getSign() == Menu::VALUE_o);
         EXPECT_FALSE(CPlayer->getIsWinner());
     }
 
     TEST(ComputerPlayerTests, createComputerPlayerThenSetIsWinnerTrueExpectGetIsWinnerTrue)
     {
-        std::shared_ptr<ComputerPlayer> CPlayer = std::make_shared<ComputerPlayer>(
-            "Damian",
-            Menu::VALUE_o
-        );
+        std::shared_ptr<ComputerPlayer> CPlayer = std::make_shared<ComputerPlayer>();
         CPlayer -> setIsWinner(true);
 
         EXPECT_TRUE(CPlayer->getIsWinner());

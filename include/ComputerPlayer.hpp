@@ -4,11 +4,13 @@
 #pragma once
 #include "IPlayer.hpp"
 
+
 class ComputerPlayer : public IPlayer
 {
 public:
-    ComputerPlayer() = delete;
-    ComputerPlayer(std::string _name, std::string _sign) : name(_name), sign(_sign), isWinner(false) {}
+    ComputerPlayer() : name("Computer"),
+                       sign(Menu::VALUE_o), // computer always plays with o
+                       isWinner(false) {};
     ~ComputerPlayer() {}
 
     // geters

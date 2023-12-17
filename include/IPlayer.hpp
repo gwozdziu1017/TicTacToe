@@ -3,6 +3,7 @@
 */
 #pragma once
 #include <string>
+#include "Menu.hpp"
 
 class IPlayer
 {
